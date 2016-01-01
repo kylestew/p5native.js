@@ -8,20 +8,32 @@ import JavaScriptCore
 
 public class Canvas: UIView, CanvasJSExports {
     
+    // TODO: better way to make sure I don't miss these?
+    // these are the functions we expose on the global namespace - polluting like a boss
+    let jsExports = [
+        "ellipse",
+        "width", "height",
+    ]
+    
     let jsContext = JSContext()
     var jsSetup:JSValue?
     var jsDraw:JSValue?
     
     // MARK: JS resource loading
     public func loadJavascript(javascript: String) {
+        // preprocess all exposed calls to add a "_."
+        var js = javascript
+        for export in jsExports {
+            js = js.stringByReplacingOccurrencesOfString(export, withString: "_.\(export)")
+        }
         
-        // TODO: expose Canvas on global namespace?
+        // bind Swift code for JS use
         jsContext.setObject(self, forKeyedSubscript: "_")
         
-        // load it
-        jsContext.evaluateScript(javascript)
+        // load JS
+        jsContext.evaluateScript(js)
         
-        // get handles
+        // get handles to lifecycle methods
         jsDraw = jsContext.objectForKeyedSubscript("draw")
         jsSetup = jsContext.objectForKeyedSubscript("setup")
         
@@ -76,8 +88,8 @@ public class Canvas: UIView, CanvasJSExports {
     
     var drawCTX:CGContext?
     var drawRect = CGRectZero
-    dynamic var width = 0.0
-    dynamic var height = 0.0
+    var width = 0.0
+    var height = 0.0
     var frameCount = 0
 //    var hasSetup = false
 //    var snapshot:UIImage?
