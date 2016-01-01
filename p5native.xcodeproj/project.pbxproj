@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		270DFB341C3649760003F7EB /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB331C3649760003F7EB /* Test.swift */; };
+		2725F0531C3658BC00321959 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0521C3658BC00321959 /* Canvas.swift */; };
+		2725F0551C36643300321959 /* 2DPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0541C36643300321959 /* 2DPrimitives.swift */; };
+		2725F0571C36657100321959 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0561C36657100321959 /* Attributes.swift */; };
 		2790F5961C3646E4007218F4 /* p5native.h in Headers */ = {isa = PBXBuildFile; fileRef = 2790F5951C3646E4007218F4 /* p5native.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2790F59D1C3646E5007218F4 /* p5native.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2790F5921C3646E4007218F4 /* p5native.framework */; };
 		2790F5A21C3646E5007218F4 /* p5nativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2790F5A11C3646E5007218F4 /* p5nativeTests.swift */; };
@@ -24,7 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		270DFB331C3649760003F7EB /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		2725F0521C3658BC00321959 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		2725F0541C36643300321959 /* 2DPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2DPrimitives.swift; sourceTree = "<group>"; };
+		2725F0561C36657100321959 /* Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		2790F5921C3646E4007218F4 /* p5native.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = p5native.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2790F5951C3646E4007218F4 /* p5native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = p5native.h; sourceTree = "<group>"; };
 		2790F5971C3646E4007218F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,9 +77,11 @@
 		2790F5941C3646E4007218F4 /* p5native */ = {
 			isa = PBXGroup;
 			children = (
+				2725F0521C3658BC00321959 /* Canvas.swift */,
+				2725F0541C36643300321959 /* 2DPrimitives.swift */,
+				2725F0561C36657100321959 /* Attributes.swift */,
 				2790F5951C3646E4007218F4 /* p5native.h */,
 				2790F5971C3646E4007218F4 /* Info.plist */,
-				270DFB331C3649760003F7EB /* Test.swift */,
 			);
 			path = p5native;
 			sourceTree = "<group>";
@@ -197,7 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270DFB341C3649760003F7EB /* Test.swift in Sources */,
+				2725F0531C3658BC00321959 /* Canvas.swift in Sources */,
+				2725F0571C36657100321959 /* Attributes.swift in Sources */,
+				2725F0551C36643300321959 /* 2DPrimitives.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@
 		270DFB1D1C3648870003F7EB /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB1C1C3648870003F7EB /* DemoUITests.swift */; };
 		270DFB3E1C364A470003F7EB /* p5native.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DFB3B1C364A3C0003F7EB /* p5native.framework */; };
 		270DFB3F1C364A470003F7EB /* p5native.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 270DFB3B1C364A3C0003F7EB /* p5native.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2725F0511C36503A00321959 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 2725F0501C36503A00321959 /* test.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		270DFB1C1C3648870003F7EB /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		270DFB1E1C3648870003F7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270DFB351C364A3C0003F7EB /* p5native.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = p5native.xcodeproj; path = ../p5native.xcodeproj; sourceTree = "<group>"; };
+		270DFB431C364B7B0003F7EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		2725F0501C36503A00321959 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +140,14 @@
 		270DFAFB1C3648870003F7EB /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				2725F0501C36503A00321959 /* test.js */,
 				270DFAFE1C3648870003F7EB /* ViewController.swift */,
 				270DFAFC1C3648870003F7EB /* AppDelegate.swift */,
 				270DFB001C3648870003F7EB /* Main.storyboard */,
 				270DFB031C3648870003F7EB /* Assets.xcassets */,
 				270DFB051C3648870003F7EB /* LaunchScreen.storyboard */,
 				270DFB081C3648870003F7EB /* Info.plist */,
+				270DFB431C364B7B0003F7EB /* MyPlayground.playground */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			files = (
 				270DFB071C3648870003F7EB /* LaunchScreen.storyboard in Resources */,
 				270DFB041C3648870003F7EB /* Assets.xcassets in Resources */,
+				2725F0511C36503A00321959 /* test.js in Resources */,
 				270DFB021C3648870003F7EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +571,7 @@
 				270DFB231C3648870003F7EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		270DFB241C3648870003F7EB /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +580,7 @@
 				270DFB261C3648870003F7EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		270DFB271C3648870003F7EB /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -581,6 +589,7 @@
 				270DFB291C3648870003F7EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
