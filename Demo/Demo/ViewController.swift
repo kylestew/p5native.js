@@ -3,7 +3,7 @@ import p5native
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var canvasView: Canvas!
+    var p5Controller:p5ViewController?
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -12,14 +12,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let example = "structure_recursion"
-        
-        if let filepath = NSBundle.mainBundle().pathForResource(example, ofType: "js") {
-            do {
-                let jsCode = try! String(contentsOfFile: filepath, encoding: NSUTF8StringEncoding)
-                canvasView.loadJavascript(jsCode)
+        if let controller = p5Controller {
+            let example = "structure_recursion"
+            if let filepath = NSBundle.mainBundle().pathForResource(example, ofType: "js") {
+                do {
+                    let jsCode = try! String(contentsOfFile: filepath, encoding: NSUTF8StringEncoding)
+                    p5Controller?.loadp5Script(jsCode)
+                }
             }
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        p5Controller = segue.destinationViewController as? p5ViewController
     }
     
 }

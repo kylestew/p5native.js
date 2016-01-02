@@ -12,9 +12,12 @@
 		2725F0531C3658BC00321959 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0521C3658BC00321959 /* Canvas.swift */; };
 		2725F0551C36643300321959 /* 2DPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0541C36643300321959 /* 2DPrimitives.swift */; };
 		2725F0571C36657100321959 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0561C36657100321959 /* Attributes.swift */; };
+		274E339F1C38297700025058 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 274E339E1C38297700025058 /* index.html */; };
 		2790F5961C3646E4007218F4 /* p5native.h in Headers */ = {isa = PBXBuildFile; fileRef = 2790F5951C3646E4007218F4 /* p5native.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2790F59D1C3646E5007218F4 /* p5native.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2790F5921C3646E4007218F4 /* p5native.framework */; };
 		2790F5A21C3646E5007218F4 /* p5nativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2790F5A11C3646E5007218F4 /* p5nativeTests.swift */; };
+		27C676601C381F1F00F0BD7D /* p5.js in Resources */ = {isa = PBXBuildFile; fileRef = 27C6765F1C381F1F00F0BD7D /* p5.js */; };
+		27C676621C381F6900F0BD7D /* p5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C676611C381F6900F0BD7D /* p5ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,12 +36,15 @@
 		2725F0521C3658BC00321959 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		2725F0541C36643300321959 /* 2DPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2DPrimitives.swift; sourceTree = "<group>"; };
 		2725F0561C36657100321959 /* Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		274E339E1C38297700025058 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		2790F5921C3646E4007218F4 /* p5native.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = p5native.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2790F5951C3646E4007218F4 /* p5native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = p5native.h; sourceTree = "<group>"; };
 		2790F5971C3646E4007218F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2790F59C1C3646E5007218F4 /* p5nativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = p5nativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2790F5A11C3646E5007218F4 /* p5nativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p5nativeTests.swift; sourceTree = "<group>"; };
 		2790F5A31C3646E5007218F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27C6765F1C381F1F00F0BD7D /* p5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = p5.js; sourceTree = "<group>"; };
+		27C676611C381F6900F0BD7D /* p5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p5ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 		2790F5941C3646E4007218F4 /* p5native */ = {
 			isa = PBXGroup;
 			children = (
+				27C6765E1C381EFB00F0BD7D /* p5-lib */,
+				27C676611C381F6900F0BD7D /* p5ViewController.swift */,
 				2725F0521C3658BC00321959 /* Canvas.swift */,
 				2725F0541C36643300321959 /* 2DPrimitives.swift */,
 				2725F0561C36657100321959 /* Attributes.swift */,
@@ -100,6 +108,16 @@
 			);
 			path = p5nativeTests;
 			sourceTree = "<group>";
+		};
+		27C6765E1C381EFB00F0BD7D /* p5-lib */ = {
+			isa = PBXGroup;
+			children = (
+				27C6765F1C381F1F00F0BD7D /* p5.js */,
+				274E339E1C38297700025058 /* index.html */,
+			);
+			name = "p5-lib";
+			path = "p5native/p5-lib";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -192,6 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C676601C381F1F00F0BD7D /* p5.js in Resources */,
+				274E339F1C38297700025058 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +232,7 @@
 				27067CEE1C377A4D00835253 /* Rendering.swift in Sources */,
 				2725F0531C3658BC00321959 /* Canvas.swift in Sources */,
 				2725F0571C36657100321959 /* Attributes.swift in Sources */,
+				27C676621C381F6900F0BD7D /* p5ViewController.swift in Sources */,
 				27067CF01C37802100835253 /* Color.swift in Sources */,
 				2725F0551C36643300321959 /* 2DPrimitives.swift in Sources */,
 			);

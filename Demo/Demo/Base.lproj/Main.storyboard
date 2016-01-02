@@ -17,26 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-Wj-yQn" customClass="Canvas" customModule="p5native">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cI-Qg-l7s">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <connections>
+                                    <segue destination="cgo-5Y-A72" kind="embed" id="2Ul-6n-T9T"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tIN-Wj-yQn" secondAttribute="trailing" id="ECC-0T-wWG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tIN-Wj-yQn" secondAttribute="bottom" id="W1W-sd-MTy"/>
-                            <constraint firstItem="tIN-Wj-yQn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ga8-0h-XxM"/>
-                            <constraint firstItem="tIN-Wj-yQn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yYo-Jr-IFE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3cI-Qg-l7s" secondAttribute="bottom" id="4fA-75-9H0"/>
+                            <constraint firstAttribute="trailing" secondItem="3cI-Qg-l7s" secondAttribute="trailing" id="RWX-m7-UvM"/>
+                            <constraint firstItem="3cI-Qg-l7s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nXt-aU-hRL"/>
+                            <constraint firstItem="3cI-Qg-l7s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="upq-Le-3lq"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="canvasView" destination="tIN-Wj-yQn" id="fXx-dl-XLZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pJ6-Hy-3Aq">
+            <objects>
+                <viewController id="cgo-5Y-A72" customClass="p5ViewController" customModule="p5native" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdh-m6-dyc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Arc-sy-8DU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="1403"/>
         </scene>
     </scenes>
 </document>
