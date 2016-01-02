@@ -19,6 +19,8 @@
 		270DFB1D1C3648870003F7EB /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB1C1C3648870003F7EB /* DemoUITests.swift */; };
 		270DFB3E1C364A470003F7EB /* p5native.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DFB3B1C364A3C0003F7EB /* p5native.framework */; };
 		270DFB3F1C364A470003F7EB /* p5native.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 270DFB3B1C364A3C0003F7EB /* p5native.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		274E33A11C382BEC00025058 /* math_double_random.js in Resources */ = {isa = PBXBuildFile; fileRef = 274E33A01C382BEC00025058 /* math_double_random.js */; };
+		274E33A41C382C7300025058 /* 3d_geometries.js in Resources */ = {isa = PBXBuildFile; fileRef = 274E33A31C382C7300025058 /* 3d_geometries.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		270DFB1E1C3648870003F7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270DFB351C364A3C0003F7EB /* p5native.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = p5native.xcodeproj; path = ../p5native.xcodeproj; sourceTree = "<group>"; };
 		270DFB431C364B7B0003F7EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		274E33A01C382BEC00025058 /* math_double_random.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = math_double_random.js; sourceTree = "<group>"; };
+		274E33A31C382C7300025058 /* 3d_geometries.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = 3d_geometries.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				27067CEB1C37776C00835253 /* structure_width_height.js */,
 				27067CF11C378ADB00835253 /* hello_p5_simple_shapes.js */,
 				27067CF31C378F2400835253 /* structure_recursion.js */,
+				274E33A01C382BEC00025058 /* math_double_random.js */,
+				274E33A31C382C7300025058 /* 3d_geometries.js */,
 			);
 			name = "p5js Examples";
 			path = "Demo/p5js Examples";
@@ -325,10 +331,12 @@
 			files = (
 				27067CF21C378ADB00835253 /* hello_p5_simple_shapes.js in Resources */,
 				27067CEC1C37776C00835253 /* structure_width_height.js in Resources */,
+				274E33A11C382BEC00025058 /* math_double_random.js in Resources */,
 				270DFB071C3648870003F7EB /* LaunchScreen.storyboard in Resources */,
 				270DFB041C3648870003F7EB /* Assets.xcassets in Resources */,
 				270DFB021C3648870003F7EB /* Main.storyboard in Resources */,
 				27067CF41C378F2400835253 /* structure_recursion.js in Resources */,
+				274E33A41C382C7300025058 /* 3d_geometries.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

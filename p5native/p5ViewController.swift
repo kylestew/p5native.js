@@ -19,6 +19,9 @@ public class p5ViewController: UIViewController, WKNavigationDelegate {
     }
     
     public func loadp5Script(javascript: String) {
+        
+        // TODO: deal with device scaling
+        
         // basic html5 environment with p5js
         if let indexURL = NSBundle(forClass: self.dynamicType).URLForResource("index", withExtension: "html") {
             webView.loadFileURL(indexURL, allowingReadAccessToURL: indexURL)

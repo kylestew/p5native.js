@@ -41,6 +41,10 @@
         <scene sceneID="pJ6-Hy-3Aq">
             <objects>
                 <viewController id="cgo-5Y-A72" customClass="p5ViewController" customModule="p5native" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wsb-MG-8Rl"/>
+                        <viewControllerLayoutGuide type="bottom" id="M1P-fX-7eY"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zdh-m6-dyc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

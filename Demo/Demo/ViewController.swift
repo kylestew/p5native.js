@@ -13,11 +13,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if let controller = p5Controller {
-            let example = "structure_recursion"
+            let example = "3d_geometries"
             if let filepath = NSBundle.mainBundle().pathForResource(example, ofType: "js") {
                 do {
                     let jsCode = try! String(contentsOfFile: filepath, encoding: NSUTF8StringEncoding)
-                    p5Controller?.loadp5Script(jsCode)
+                    controller.loadp5Script(jsCode)
                 }
             }
         }
