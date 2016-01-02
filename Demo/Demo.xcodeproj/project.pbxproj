@@ -21,6 +21,7 @@
 		270DFB3F1C364A470003F7EB /* p5native.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 270DFB3B1C364A3C0003F7EB /* p5native.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		274E33A11C382BEC00025058 /* math_double_random.js in Resources */ = {isa = PBXBuildFile; fileRef = 274E33A01C382BEC00025058 /* math_double_random.js */; };
 		274E33A41C382C7300025058 /* 3d_geometries.js in Resources */ = {isa = PBXBuildFile; fileRef = 274E33A31C382C7300025058 /* 3d_geometries.js */; };
+		274E33A61C382DFA00025058 /* basic_rect.js in Resources */ = {isa = PBXBuildFile; fileRef = 274E33A51C382DFA00025058 /* basic_rect.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		270DFB431C364B7B0003F7EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		274E33A01C382BEC00025058 /* math_double_random.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = math_double_random.js; sourceTree = "<group>"; };
 		274E33A31C382C7300025058 /* 3d_geometries.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = 3d_geometries.js; sourceTree = "<group>"; };
+		274E33A51C382DFA00025058 /* basic_rect.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = basic_rect.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				27067CF31C378F2400835253 /* structure_recursion.js */,
 				274E33A01C382BEC00025058 /* math_double_random.js */,
 				274E33A31C382C7300025058 /* 3d_geometries.js */,
+				274E33A51C382DFA00025058 /* basic_rect.js */,
 			);
 			name = "p5js Examples";
 			path = "Demo/p5js Examples";
@@ -332,6 +335,7 @@
 				27067CF21C378ADB00835253 /* hello_p5_simple_shapes.js in Resources */,
 				27067CEC1C37776C00835253 /* structure_width_height.js in Resources */,
 				274E33A11C382BEC00025058 /* math_double_random.js in Resources */,
+				274E33A61C382DFA00025058 /* basic_rect.js in Resources */,
 				270DFB071C3648870003F7EB /* LaunchScreen.storyboard in Resources */,
 				270DFB041C3648870003F7EB /* Assets.xcassets in Resources */,
 				270DFB021C3648870003F7EB /* Main.storyboard in Resources */,
