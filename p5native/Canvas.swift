@@ -4,6 +4,7 @@ import JavaScriptCore
 @objc protocol CanvasJSExports : JSExport {
     var width:Double { get set }
     var height:Double { get set }
+    func noLoop()
 }
 
 public class Canvas: UIView, CanvasJSExports {
@@ -16,6 +17,7 @@ public class Canvas: UIView, CanvasJSExports {
         // Canvas
         "width",
         "height",
+        "noLoop",
         
         // 2DPrimitives
         "ellipse",
@@ -23,8 +25,10 @@ public class Canvas: UIView, CanvasJSExports {
         
         // Color
         "background",
+        "noFill",
         "fill",
         "noStroke",
+        "stroke",
         
         // Rendering
         "createCanvas",
@@ -91,6 +95,12 @@ public class Canvas: UIView, CanvasJSExports {
         CGContextSetStrokeColorWithColor(drawCTX, _strokeColor.CGColor)
     }
     
+    // MARK: Structure
+    func noLoop() {
+        // just pause displayLink
+        displayLink.paused = true
+    }
+    
     // MARK: Math
     let PI = 3.1415926536
     let TWO_PI = 6.2831853072
@@ -118,15 +128,21 @@ public class Canvas: UIView, CanvasJSExports {
         jsContext.evaluateScript(js)
         
         // get handles to lifecycle methods
-        jsDraw = jsContext.objectForKeyedSubscript("draw")
         jsSetup = jsContext.objectForKeyedSubscript("setup")
+        jsDraw = jsContext.objectForKeyedSubscript("draw")
+        if (jsDraw?.toString() == "undefined") {
+            jsDraw = nil
+        }
         
         // setup exception handling for dev
         jsContext.exceptionHandler = { context, exception in
             print("JS Error: \(exception)")
         }
         
-        run()
+        if (jsDraw != nil) {
+            // start run loop
+            run()
+        }
     }
     
     // MARK: Animation loop
@@ -188,9 +204,9 @@ public class Canvas: UIView, CanvasJSExports {
         width = Double(drawRect.width)
         height = Double(drawRect.height)
         
-        // run setup once
+        // run setup once, or if no draw() method - redisplay setup
         // TODO: run setup/rest again if display size changes
-        if (!hasSetup) {
+        if (!hasSetup || jsDraw != nil) {
 //            self.touchPoint = Point(self.width/2, self.height/2)
 
             jsSetup?.callWithArguments([])

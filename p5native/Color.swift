@@ -3,10 +3,10 @@ import JavaScriptCore
 
 @objc protocol ColorExports : JSExport {
     func background(color: Int)
-    
+    func noFill()
     func fill()
-    
     func noStroke()
+    func stroke()
 }
 
 extension Canvas : ColorExports {
@@ -51,12 +51,19 @@ extension Canvas : ColorExports {
     func fill() {
         let args = JSContext.currentArguments()
         if (args.count == 1) {
+            
+            // TODO: could be a string or something else I guess
+            
             fillEnabled = true
             _fillColor = UIColor(white: CGFloat(Double(args[0].toDouble()/255.0)), alpha: 1)
             CGContextSetFillColorWithColor(drawCTX, _fillColor.CGColor)
         } else if (args.count == 3) {
             fillEnabled = true
             _fillColor = makeColor(args[0].toDouble(), args[1].toDouble(), args[2].toDouble())
+            CGContextSetFillColorWithColor(drawCTX, _fillColor.CGColor)
+        } else if (args.count == 4) {
+            fillEnabled = true
+            _fillColor = makeColor(args[0].toDouble(), args[1].toDouble(), args[2].toDouble(), args[3].toDouble()/255.0)
             CGContextSetFillColorWithColor(drawCTX, _fillColor.CGColor)
         }
     }
@@ -67,39 +74,34 @@ extension Canvas : ColorExports {
 //        _fillColor = _fillColor.colorWithAlphaComponent(CGFloat(alpha))
 //        CGContextSetFillColorWithColor(drawCTX, _fillColor.CGColor)
 //    }
-//    func fill(v1: Double, _ v2: Double, _ v3: Double) {
-//    }
-//    func fill(v1: Double, _ v2: Double, _ v3: Double, _ alpha: Double) {
-//        fillEnabled = true
-//        _fillColor = makeColor(v1, v2, v3, alpha)
-//        CGContextSetFillColorWithColor(drawCTX, _fillColor.CGColor)
-//    }
-//    
-//    func noFill() {
-//        fillEnabled = false
-//        CGContextSetFillColorWithColor(drawCTX, UIColor.clearColor().CGColor)
-//    }
+    
+    func noFill() {
+        fillEnabled = false
+        CGContextSetFillColorWithColor(drawCTX, UIColor.clearColor().CGColor)
+    }
     
     func noStroke() {
         strokeEnabled = false
         CGContextSetStrokeColorWithColor(drawCTX, UIColor.clearColor().CGColor)
     }
     
-//    func stroke(color: UIColor) {
-//        strokeEnabled = true
-//        _strokeColor = color
-//        CGContextSetStrokeColorWithColor(drawCTX, _strokeColor.CGColor)
-//    }
+    func stroke() {
+        let args = JSContext.currentArguments()
+        if (args.count == 1) {
+//            strokeEnabled = true
+//            _strokeColor = color
+//            CGContextSetStrokeColorWithColor(drawCTX, _strokeColor.CGColor)
+        } else if (args.count == 3) {
+            strokeEnabled = true
+            _strokeColor = makeColor(args[0].toDouble(), args[1].toDouble(), args[2].toDouble())
+            CGContextSetStrokeColorWithColor(drawCTX, _strokeColor.CGColor)
+        }
+    }
 //    // HEX inputs only work with RGB mode
 //    func stroke(hex: Int, _ alpha: Double) {
 //        strokeEnabled = true
 //        _strokeColor = UIColor(hex: hex)
 //        _strokeColor = _strokeColor.colorWithAlphaComponent(CGFloat(alpha))
-//        CGContextSetStrokeColorWithColor(drawCTX, _strokeColor.CGColor)
-//    }
-//    func stroke(v1: Double, _ v2: Double, _ v3: Double) {
-//        strokeEnabled = true
-//        _strokeColor = makeColor(v1, v2, v3)
 //        CGContextSetStrokeColorWithColor(drawCTX, _strokeColor.CGColor)
 //    }
 //    func stroke(v1: Double, _ v2: Double, _ v3: Double, _ alpha: Double) {

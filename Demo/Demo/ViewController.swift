@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let example = "structure_width_height"
+        let example = "structure_recursion"
         
         if let filepath = NSBundle.mainBundle().pathForResource(example, ofType: "js") {
             do {

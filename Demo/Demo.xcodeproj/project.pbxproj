@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27067CEC1C37776C00835253 /* structure_width_height.js in Resources */ = {isa = PBXBuildFile; fileRef = 27067CEB1C37776C00835253 /* structure_width_height.js */; };
+		27067CF21C378ADB00835253 /* hello_p5_simple_shapes.js in Resources */ = {isa = PBXBuildFile; fileRef = 27067CF11C378ADB00835253 /* hello_p5_simple_shapes.js */; };
+		27067CF41C378F2400835253 /* structure_recursion.js in Resources */ = {isa = PBXBuildFile; fileRef = 27067CF31C378F2400835253 /* structure_recursion.js */; };
 		270DFAFD1C3648870003F7EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFAFC1C3648870003F7EB /* AppDelegate.swift */; };
 		270DFAFF1C3648870003F7EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFAFE1C3648870003F7EB /* ViewController.swift */; };
 		270DFB021C3648870003F7EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270DFB001C3648870003F7EB /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		27067CEB1C37776C00835253 /* structure_width_height.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = structure_width_height.js; sourceTree = "<group>"; };
+		27067CF11C378ADB00835253 /* hello_p5_simple_shapes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hello_p5_simple_shapes.js; sourceTree = "<group>"; };
+		27067CF31C378F2400835253 /* structure_recursion.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = structure_recursion.js; sourceTree = "<group>"; };
 		270DFAF91C3648860003F7EB /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		270DFAFC1C3648870003F7EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		270DFAFE1C3648870003F7EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				27067CEB1C37776C00835253 /* structure_width_height.js */,
+				27067CF11C378ADB00835253 /* hello_p5_simple_shapes.js */,
+				27067CF31C378F2400835253 /* structure_recursion.js */,
 			);
 			name = "p5js Examples";
 			path = "Demo/p5js Examples";
@@ -317,10 +323,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27067CF21C378ADB00835253 /* hello_p5_simple_shapes.js in Resources */,
 				27067CEC1C37776C00835253 /* structure_width_height.js in Resources */,
 				270DFB071C3648870003F7EB /* LaunchScreen.storyboard in Resources */,
 				270DFB041C3648870003F7EB /* Assets.xcassets in Resources */,
 				270DFB021C3648870003F7EB /* Main.storyboard in Resources */,
+				27067CF41C378F2400835253 /* structure_recursion.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
