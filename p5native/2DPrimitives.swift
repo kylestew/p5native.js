@@ -1,11 +1,13 @@
 import UIKit
 import JavaScriptCore
 
-@objc protocol DrawJSExports : JSExport {
+@objc protocol _2DPrimitivesExports : JSExport {
     func ellipse(a: Double, _ b: Double, _ c: Double, _ d: Double)
+    
+    func rect(x: Double, _ y: Double, _ w: Double, _ h: Double)
 }
 
-extension Canvas : DrawJSExports {
+extension Canvas : _2DPrimitivesExports {
     
     // arc()
     
@@ -40,20 +42,20 @@ extension Canvas : DrawJSExports {
 //    }
 //    
 //    // quad()
-//    
-//    func rect(x: Double, _ y: Double, _ w: Double, _ h: Double) {
-//        var rect = CGRectMake(CGFloat(x), CGFloat(y), CGFloat(w), CGFloat(h))
-//        if (rectMode == RectMode.CENTER) {
-//            rect.origin.x -= rect.width/2.0
-//            rect.origin.y -= rect.height/2.0
-//        }
-//        CGContextAddRect(drawCTX, rect)
-//        if !drawingShape { // draw now
-//            CGContextDrawPath(drawCTX, drawingMode)
-//        }
-//    }
-//    
-//    
+    
+    func rect(x: Double, _ y: Double, _ w: Double, _ h: Double) {
+        var rect = CGRectMake(CGFloat(x), CGFloat(y), CGFloat(w), CGFloat(h))
+        if (rectMode == RectMode.CENTER) {
+            rect.origin.x -= rect.width/2.0
+            rect.origin.y -= rect.height/2.0
+        }
+        CGContextAddRect(drawCTX, rect)
+        if !drawingShape { // draw now
+            CGContextDrawPath(drawCTX, drawingMode)
+        }
+    }
+    
+    
 //    // extras
 //    func circle(centerX: Double, _ centerY: Double, _ radius: Double) {
 //        ellipse(centerX - radius, centerY - radius, radius*2, radius*2)

@@ -12,7 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let filepath = NSBundle.mainBundle().pathForResource("test", ofType: "js") {
+        let example = "structure_width_height"
+        
+        if let filepath = NSBundle.mainBundle().pathForResource(example, ofType: "js") {
             do {
                 let jsCode = try! String(contentsOfFile: filepath, encoding: NSUTF8StringEncoding)
                 canvasView.loadJavascript(jsCode)

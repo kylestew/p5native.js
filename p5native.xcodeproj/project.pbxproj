@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27067CEE1C377A4D00835253 /* Rendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27067CED1C377A4D00835253 /* Rendering.swift */; };
+		27067CF01C37802100835253 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27067CEF1C37802100835253 /* Color.swift */; };
 		2725F0531C3658BC00321959 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0521C3658BC00321959 /* Canvas.swift */; };
 		2725F0551C36643300321959 /* 2DPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0541C36643300321959 /* 2DPrimitives.swift */; };
 		2725F0571C36657100321959 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725F0561C36657100321959 /* Attributes.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27067CED1C377A4D00835253 /* Rendering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rendering.swift; sourceTree = "<group>"; };
+		27067CEF1C37802100835253 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2725F0521C3658BC00321959 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		2725F0541C36643300321959 /* 2DPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2DPrimitives.swift; sourceTree = "<group>"; };
 		2725F0561C36657100321959 /* Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				2725F0521C3658BC00321959 /* Canvas.swift */,
 				2725F0541C36643300321959 /* 2DPrimitives.swift */,
 				2725F0561C36657100321959 /* Attributes.swift */,
+				27067CEF1C37802100835253 /* Color.swift */,
+				27067CED1C377A4D00835253 /* Rendering.swift */,
 				2790F5951C3646E4007218F4 /* p5native.h */,
 				2790F5971C3646E4007218F4 /* Info.plist */,
 			);
@@ -203,8 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27067CEE1C377A4D00835253 /* Rendering.swift in Sources */,
 				2725F0531C3658BC00321959 /* Canvas.swift in Sources */,
 				2725F0571C36657100321959 /* Attributes.swift in Sources */,
+				27067CF01C37802100835253 /* Color.swift in Sources */,
 				2725F0551C36643300321959 /* 2DPrimitives.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
