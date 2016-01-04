@@ -27,24 +27,9 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
         if let wv = webView {
             wv.navigationDelegate = self
             view.addSubview(wv)
+            wv.scrollView.bounces = false // lock down scroll
             
-//            let zoomScale = wv.scrollView.zoomScale;
-//            wv.scrollView.maximumZoomScale = zoomScale;
-//            wv.scrollView.minimumZoomScale = zoomScale;
             
-            // HACK: lock down scroll on webview
-//            let subviews = wv.scrollView.subviews
-//            for subview in subviews{
-//                if(subview.isKindOfClass(NSClassFromString("WKContentView")!)){
-//                    if let recognizers = subview.gestureRecognizers {
-//                        for recognizer in recognizers {
-//                            if recognizer.isKindOfClass(NSClassFromString("UIWebTouchEventsGestureRecognizer")!){
-//                                subview.removeGestureRecognizer(recognizer as! UIGestureRecognizer)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
             
         }
     }
