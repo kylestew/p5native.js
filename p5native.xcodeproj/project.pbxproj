@@ -18,6 +18,7 @@
 		2790F5A21C3646E5007218F4 /* p5nativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2790F5A11C3646E5007218F4 /* p5nativeTests.swift */; };
 		27C676601C381F1F00F0BD7D /* p5.js in Resources */ = {isa = PBXBuildFile; fileRef = 27C6765F1C381F1F00F0BD7D /* p5.js */; };
 		27C676621C381F6900F0BD7D /* p5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C676611C381F6900F0BD7D /* p5ViewController.swift */; };
+		27CA812B1C39B40F00028C5D /* p5.sound.js in Resources */ = {isa = PBXBuildFile; fileRef = 27CA812A1C39B40F00028C5D /* p5.sound.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		2790F5A31C3646E5007218F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27C6765F1C381F1F00F0BD7D /* p5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = p5.js; sourceTree = "<group>"; };
 		27C676611C381F6900F0BD7D /* p5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p5ViewController.swift; sourceTree = "<group>"; };
+		27CA812A1C39B40F00028C5D /* p5.sound.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = p5.sound.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				27C6765F1C381F1F00F0BD7D /* p5.js */,
+				27CA812A1C39B40F00028C5D /* p5.sound.js */,
 				274E339E1C38297700025058 /* index.html */,
 			);
 			name = "p5-lib";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27C676601C381F1F00F0BD7D /* p5.js in Resources */,
+				27CA812B1C39B40F00028C5D /* p5.sound.js in Resources */,
 				274E339F1C38297700025058 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
