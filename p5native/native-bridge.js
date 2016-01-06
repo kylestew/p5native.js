@@ -14,8 +14,13 @@ function receivePropUpdate(key, value) {
 
 // p5.js -> iOS
 function postPropUpdate(key, value) {
-    // TODO: update local copy?
     var msg = {};
     msg[key] = value
     window.webkit.messageHandlers.props.postMessage(msg);
+}
+
+// internal p5.js use, passes to bridge
+function setProp(key, value) {
+    props[key] = value;
+    postPropUpdate(key, value);
 }

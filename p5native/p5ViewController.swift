@@ -64,21 +64,9 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
             } else {
                 
                 if let props = message.body as? [String:AnyObject] {
-                    
-                    print(props)
-                    
-//                for prop in props {
-//                    if (prop.0 == "propBindings") {
-//                        // pass to bindings callback
-//                        if let bindings = prop.1 as? [[String:String]] {
-//                            delegate.p5PropBindings(bindings)
-//                        }
-//                    } else {
-//                        // standard prop update
-//                        delegate.p5PropUpdated(prop.0, value: prop.1)
-//                    }
-//                }
-                    
+                    for (key, value) in props {
+                        delegate.p5PropUpdated(key, value: value)
+                    }
                 }
                 
             }
