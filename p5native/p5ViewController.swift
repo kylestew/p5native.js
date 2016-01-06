@@ -11,6 +11,7 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
     public var propsDelegate:p5PropsDelegate?
     
     var webView:WKWebView?
+    var canvasSize = CGSizeZero
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +29,48 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
             wv.navigationDelegate = self
             view.addSubview(wv)
             wv.scrollView.bounces = false // lock down scroll
-            
-            
-            
+        }
+        
+    }
+    
+    var script:String?
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        canvasSize = view.bounds.size
+        if let script = script {
+            loadScript(script)
         }
     }
     
     public func loadp5Script(javascript: String) {
+        // save until we have proper view size
+        script = javascript
+    }
+    
+    func loadScript(var script: String) {
         // basic html5 environment with p5js
         if let webView = webView {
             if let indexURL = NSBundle(forClass: self.dynamicType).URLForResource("index", withExtension: "html") {
                 webView.loadFileURL(indexURL, allowingReadAccessToURL: indexURL)
-                webView.evaluateJavaScript(javascript, completionHandler: { (object, error) -> Void in
+                
+                // inject view size into p5 script
+                if let match = script.rangeOfString("(createCanvas\\s?)(\\([^\\)]*\\))", options: .RegularExpressionSearch) {
+                    var str = script.substringWithRange(match)
+                    str = str.stringByReplacingOccurrencesOfString(" ", withString: "")
+                    str = str.stringByReplacingOccurrencesOfString("createCanvas(", withString: "")
+                    str = str.stringByReplacingOccurrencesOfString(")", withString: "")
+                    let args = str.componentsSeparatedByString(",")
+                    var replace:String
+                    if (args.count == 3) {
+                        replace = "createCanvas(\(Int(canvasSize.width)),\(Int(canvasSize.height)),\(args[2]))"
+                    } else {
+                        replace = "createCanvas(\(Int(canvasSize.width)),\(Int(canvasSize.height)))"
+                    }
+                    script.replaceRange(match, with: replace)
+                }
+                
+                webView.evaluateJavaScript(script, completionHandler: { (object, error) -> Void in
                     print("p5 script loaded")
                 })
             }
