@@ -54,7 +54,7 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
             if let indexURL = NSBundle(forClass: self.dynamicType).URLForResource("index", withExtension: "html") {
                 webView.loadFileURL(indexURL, allowingReadAccessToURL: indexURL)
                 
-                // inject view size into p5 script
+                // inject view size into p5 script via the arcane magics on REGEX
                 if let match = script.rangeOfString("(createCanvas\\s?)(\\([^\\)]*\\))", options: .RegularExpressionSearch) {
                     var str = script.substringWithRange(match)
                     str = str.stringByReplacingOccurrencesOfString(" ", withString: "")
@@ -68,6 +68,20 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
                         replace = "createCanvas(\(Int(canvasSize.width)),\(Int(canvasSize.height)))"
                     }
                     script.replaceRange(match, with: replace)
+                } else {
+                    let inject = "\n\tcreateCanvas(\(Int(canvasSize.width)),\(Int(canvasSize.height)));\n"
+                    // coder did not provide createCanvas() call, add one in setup block
+                    if let match = script.rangeOfString("(setup\\s?[^\\{]*\\{)", options: .RegularExpressionSearch) {
+                        
+                        let before = Range(start: script.startIndex, end: match.endIndex)
+                        let after = Range(start: match.endIndex, end: script.endIndex)
+                        script = script[before] + inject + script[after]
+                        
+                        
+                    } else {
+                        // no setup() function exists, just inject one
+                        script = "function setup(){\(inject)}\n" + script
+                    }
                 }
                 
                 webView.evaluateJavaScript(script, completionHandler: { (object, error) -> Void in
