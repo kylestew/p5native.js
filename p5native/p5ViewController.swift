@@ -17,6 +17,7 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
         super.viewDidLoad()
         
         let controller = WKUserContentController()
+        controller.addScriptMessageHandler(self, name: "debugLog")
         controller.addScriptMessageHandler(self, name: "props")
         controller.addScriptMessageHandler(self, name: "propRegistration")
        
@@ -86,6 +87,12 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
                 
                 webView.evaluateJavaScript(script, completionHandler: { (object, error) -> Void in
                     print("p5 script loaded")
+                    if (error != nil) {
+                        print("SKETCH ERROR: \(error)")
+                        let alert = UIAlertController(title: "Sketch Error", message: "Could not run your JavaScript sketch, check those codes.", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
                 })
             }
         }
@@ -100,14 +107,21 @@ public class p5ViewController: UIViewController, WKNavigationDelegate, WKScriptM
     public func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
         if let delegate = propsDelegate {
             
-            if (message.name == "propRegistration") {
+            if (message.name == "debugLog") {
+                
+                // pass to console
+                if let msg = message.body as? String {
+                    print(msg)
+                }
+                
+            } else if message.name == "propRegistration" {
                 
                 if let binding = message.body as? NSDictionary {
                     delegate.p5PropBound(binding)
                 }
                 
             } else {
-                
+            
                 if let props = message.body as? [String:AnyObject] {
                     for (key, value) in props {
                         delegate.p5PropUpdated(key, value: value)
